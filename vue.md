@@ -1,5 +1,7 @@
 # 📚 Apuntes de Vue.js
 
+### Abrir con Ctrl + Shift + V en el documento
+
 ## 🚀 Instalación y Configuración Inicial
 
 ### Instalación de Vue CLI
