@@ -17,6 +17,12 @@
                             <a class="nav-link" [routerLink]="['/subordinados']" routerLinkActive="router-link-active" >Subordinados</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/productos']" routerLinkActive="router-link-active" >Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/detalle-empleado', 123]" [queryParams]="{nombre: 'Ana García', salario: 3000, departamento: 'IT'}" routerLinkActive="router-link-active" >Empleado (Params)</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
                         </li>
                     </ul>

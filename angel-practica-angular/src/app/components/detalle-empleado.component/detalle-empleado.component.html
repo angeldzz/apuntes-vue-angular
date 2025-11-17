@@ -1,0 +1,60 @@
+<div class="container">
+  <h2>Detalle del Empleado</h2>
+  
+  <div class="info-card">
+    <div class="info-header">
+      <h3>Información recibida por parámetros de ruta</h3>
+    </div>
+    
+    <div class="info-body">
+      <div class="info-row">
+        <span class="label">ID (Parámetro de ruta):</span>
+        <span class="value">{{ idEmpleado }}</span>
+      </div>
+      
+      <div class="info-row">
+        <span class="label">Nombre (QueryParam):</span>
+        <span class="value">{{ nombre }}</span>
+      </div>
+      
+      <div class="info-row">
+        <span class="label">Salario (QueryParam):</span>
+        <span class="value">{{ salario | currency:'EUR' }}</span>
+      </div>
+      
+      <div class="info-row">
+        <span class="label">Departamento (QueryParam):</span>
+        <span class="value">{{ departamento }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="explicacion">
+    <h4>📚 Tipos de parámetros en Angular:</h4>
+    <ul>
+      <li><strong>Route Params:</strong> /detalle-empleado/<code>:id</code> - Obligatorios, parte de la URL</li>
+      <li><strong>Query Params:</strong> ?nombre=Juan&salario=3500 - Opcionales, después del ?</li>
+    </ul>
+  </div>
+
+  <div class="ejemplos">
+    <h4>🔗 Ejemplos de URLs:</h4>
+    <div class="ejemplo-url">
+      <code>/detalle-empleado/10</code>
+      <p>Solo con ID (route param)</p>
+    </div>
+    <div class="ejemplo-url">
+      <code>/detalle-empleado/25?nombre=María&salario=4200&departamento=Ventas</code>
+      <p>ID + Query Params completos</p>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-secondary" (click)="volver()">
+      ← Volver al Inicio
+    </button>
+    <button class="btn btn-primary" (click)="irConDatos()">
+      Ver Ejemplo con Datos
+    </button>
+  </div>
+</div>

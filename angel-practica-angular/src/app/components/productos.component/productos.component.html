@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Lista de Productos (Componente Padre)</h2>
+  
+  <div class="productos-grid">
+    <div 
+      *ngFor="let producto of productos" 
+      class="producto-card"
+      (click)="seleccionarProducto(producto)"
+      [class.selected]="productoSeleccionado && productoSeleccionado.id === producto.id">
+      <h3>{{ producto.nombre }}</h3>
+      <p><strong>Categoría:</strong> {{ producto.categoria }}</p>
+      <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+      <p><strong>Stock:</strong> {{ producto.stock }} unidades</p>
+    </div>
+  </div>
+
+  @if (productoSeleccionado) {
+    <div class="detalle-container">
+      <h3>Producto Seleccionado:</h3>
+      <app-producto-detalle 
+        [producto]="productoSeleccionado"
+        (eventoCompra)="recibirMensajeHijo($event)">
+      </app-producto-detalle>
+    </div>
+  }
+
+  @if (mensaje) {
+    <div class="mensaje-hijo">
+      <strong>Mensaje del componente hijo:</strong> {{ mensaje }}
+    </div>
+  }
+</div>
